@@ -1,40 +1,185 @@
-body {
-  background-color: #e8d6d6ff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Changes how the browser calculates an element's TOTAL height and width, resolving the problem of padding and borders, i.e, The box-sizing property allows us to include the padding and border in an element's total width and height. If you set box-sizing: border-box; on an element, the padding and border are included in the calculation of the width and height: */
 }
 
-.block {
+body {
+  background-color: #f5efe6;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 1rem;
+  font-family: Sans-Serif;
 }
 
-.content {
+.container {
   background-color: #f4f1f1ff;
   padding: 25px 100px;
   text-align: center;
   border-radius: 15px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 4px 8px 0 rgba(79, 78, 78, 0.2),
-    0 6px 20px 0 rgba(79, 78, 78, 0.19);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden; /* which means if the content flows out of the container, it will be hidden */
+  position: relative;
 }
 
-.header {
-  margin-top: 0;
-  color: #eb5c23ff;
+/* Screens */
+.screen {
+  display: none;
+  padding: 2rem;
+  text-align: center;
 }
 
-.text {
-  color: #595757ff;
+.screen.active {
+  display: block;
 }
 
-.start-quiz {
-  margin-top: 15px;
-  border: none;
-  background-color: #eb5c23ff;
-  color: white;
-  font-size: 15px;
+/* Start Screen */
+#start-screen h1 {
+  color: #e86a33;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+#start-screen p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.quiz-header {
+  margin-bottom: 2rem;
+}
+
+#question-text {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.quiz-info {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.answer-btn {
+  background-color: #f8f0e5;
+  color: #333;
+  border: 2px solid #ead8bc;
   border-radius: 10px;
-  padding: 15px 25px;
+  padding: 1rem;
   cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #eadbc8;
+  border-color: #dac0ae;
+}
+
+.answer-btn.correct {
+  background-color: #e6fff0;
+  border-color: #a3f0c4;
+  color: #28a745;
+}
+
+.answer-btn.incorrect {
+  background-color: #fff0f0;
+  border-color: #ffbdbd;
+  color: #dc3545;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #f8f0e5;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #e86a33;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Result Screen */
+#result-screen h1 {
+  color: #e86a33;
+  margin-bottom: 30px;
+}
+
+.result-info {
+  background-color: #f8f0e5;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 1rem;
+}
+
+.result-info p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+#result-message {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e86a33;
+}
+
+button {
+  background-color: #e86a33;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d45b28;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+  /* when we hit 500px and below, implement the styles below */
+
+  .screen {
+    padding: 1rem;
+  }
+
+  #start-screen h1 {
+    font-size: 2rem;
+  }
+
+  #question-text {
+    font-size: 1.3rem;
+  }
+
+  .answer-btn {
+    padding: 12px;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
 }
