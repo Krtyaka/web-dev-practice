@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  margin-bottom: 5px;
+}
+
+body {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  border: none;
+  background-color: rgba(77, 77, 77, 0.5);
+  color: white;
+  margin-right: 5px;
+  border-radius: 35px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.orange-btn {
+  background-color: rgba(250, 160, 50, 1);
+}
+
+.orange-btn:hover {
+  background-color: rgba(250, 160, 50, 0.8);
+}
+
+button:hover {
+  background-color: rgba(77, 77, 77, 1);
+}
