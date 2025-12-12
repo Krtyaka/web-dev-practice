@@ -1,31 +1,211 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>HTML and CSS for Complete Beginners: Example 2-11-2</title>
+    <title>HTML and CSS for Complete Beginners: Example 2-11-2</title>
 
-		<!-- This CSS and font is purely for presentational purposes. -->
-		<link rel="stylesheet" href="css/presentation.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet" />
-	</head>
+    <!-- This CSS and font is purely for presentational purposes. -->
+    <link rel="stylesheet" href="css/presentation.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-	<body class="flip">
-		<section class="learn">
-			<!-- Practice area start -->
+  <body class="flip">
+    <section class="learn">
+      <!-- Practice area start -->
 
-			<h1>Your Order</h1>
+      <h1>Your Order</h1>
+      <form action="" method="get" id="order-form">
+        <div>
+          <div>
+            <label for="order-name">Name</label>
+            <input
+              type="text"
+              placeholder="Your full name"
+              name="order-name"
+              id="order-name"
+              autofocus
+            />
+          </div>
 
+          <div>
+            <label for="order-email">Email address</label>
+            <input
+              type="email"
+              placeholder="krtyaka@gmail.com"
+              name="order-email"
+              id="order-email"
+              disabled
+            />
+          </div>
 
+          <div>
+            <label for="order-address-1">Address</label>
+            <input
+              type="text"
+              placeholder="9 Augusta Street"
+              name="order-address-1"
+              id="order-address-1"
+            />
+            <input
+              type="text"
+              placeholder="Suite 122"
+              name="order-address-2"
+              id="order-address-2"
+            />
+          </div>
 
-			<!-- Practice area end -->
-		</section>
+          <div>
+            <div>
+              <label for="">City</label>
+              <input type="text" id="order-city" name="order-city" />
+            </div>
 
-		<section class="preview" data-content="lesson 2-11: Using Forms and Buttons">
-			<img width="903px" src="images/reference/order-form.png" alt="Reference image" />
-		</section>
-	</body>
+            <div>
+              <label for="">State</label>
+              <!-- for a dropdown -->
+              <select id="order-state" name="order-state">
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <option value="Arizona">Arizona</option>
+                <option value="Arkansas">Arkansas</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="">Zip</label>
+              <input type="text" id="order-zip" name="order-zip" />
+            </div>
+          </div>
+
+          <div>
+            <label>What color samples should we send you?</label>
+            <!-- same name for all the checkboxes as they are grouped together -->
+            <label for="sample-white">
+              <input
+                type="checkbox"
+                name="color-sample"
+                id="sample-white"
+                value="white"
+                disabled
+              />
+              White
+            </label>
+            <label for="sample-magenta">
+              <input
+                type="checkbox"
+                name="color-sample"
+                id="sample-magenta"
+                value="magenta"
+                checked
+              />
+              Magenta
+            </label>
+            <label for="sample-coral">
+              <input
+                type="checkbox"
+                name="color-sample"
+                id="sample-coral"
+                value="coral"
+              />
+              Coral
+            </label>
+            <label for="sample-burgundy">
+              <input
+                type="checkbox"
+                name="color-sample"
+                id="sample-burgundy"
+                value="burgundy"
+                checked
+              />
+              Burgundy
+            </label>
+            <label for="sample-charcoal">
+              <input
+                type="checkbox"
+                name="color-sample"
+                id="sample-charcoal"
+                value="charcoal"
+              />
+              Charcoal
+            </label>
+          </div>
+
+          <div>
+            <!-- we need to have the same for all radio buttons to depict that they are of the same group and hence only one can be selected at a time -->
+            <label>How large is your team?</label>
+            <label for="size-1"
+              ><input type="radio" name="team-size" id="size-1" value="1-5" />
+              1-5 people</label
+            >
+            <label for="size-2"
+              ><input
+                type="radio"
+                name="team-size"
+                id="size-2"
+                value="6-10"
+                checked
+              />6-10 people</label
+            >
+            <label for="size-3"
+              ><input
+                type="radio"
+                name="team-size"
+                id="size-3"
+                value="10+"
+              />10+ people</label
+            >
+          </div>
+
+          <div>
+            <label for="order-comments">Comments</label><br />
+            <textarea
+              name="comments"
+              id="order-comments"
+              rows="6"
+              cols="80"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="special-offers"
+              ><input
+                type="checkbox"
+                name="special-offers"
+                id="special-offers"
+              />
+              Sign up for special offers</label
+            >
+
+            <!-- <input type="button" value="Place Order" /> 
+            works like a plain button, doesnt submit the form on clicking-->
+            <!-- <button>Place Order</button> -->
+            <!-- <input type="submit" value="Place Order" /> -->
+          </div>
+        </div>
+      </form>
+
+      <!-- Therefore you can have a button inside the form and it will automatically submit it when clicked, or you can have a button outside the form and link it to the form for submitting when clicked -->
+      <button form="order-form">Place Order</button>
+
+      <!-- Practice area end -->
+    </section>
+
+    <section
+      class="preview"
+      data-content="lesson 2-11: Using Forms and Buttons"
+    >
+      <img
+        width="903px"
+        src="images/reference/order-form.png"
+        alt="Reference image"
+      />
+    </section>
+  </body>
 </html>
